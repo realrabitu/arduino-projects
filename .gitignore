@@ -1,0 +1,15 @@
+# Ignore Arduino IDE temporary build folders
+/build/
+/bin/
+
+# Ignore local IDE settings
+.build/
+.arduino/
+*.local.txt
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Exclude the global external libraries folder
+/libraries/
