@@ -1,5 +1,5 @@
-const int trigPin = 12, echoPin = 13;
-const int ledPin = 9;
+const byte trigPin = 3, echoPin = 2;
+const byte ledPin = 12;
 int brightness = 0;
 long distance, duration;
 double previousMillis = 0;
@@ -26,8 +26,15 @@ void loop() {
     Serial.print("Distance: ");
     Serial.print(distance);
     Serial.println(" cm");
+    if (distance <= 5) {
+      digitalWrite(ledPin, HIGH);
+      Serial.println("Obstacle detected!");
+    }
+    else {
+      digitalWrite(ledPin, LOW);
+    }
   }
-  brightness = constrain(map(distance, 0, 200, 0, 255),0,255);
-  analogWrite(ledPin, brightness);
+  
+  
 
 }

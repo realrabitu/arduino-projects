@@ -1,4 +1,4 @@
-int potPin = A1;
+int potPin = A0;
 int ledPin = 6;
 
 void setup() {
@@ -8,8 +8,6 @@ void setup() {
 
 void loop() {
   int potValue = analogRead(potPin);
-  potValue = map(potValue, 0, 1023, 0, 255);
-  analogWrite(ledPin, potValue);
   Serial.println(potValue);
-  delay(50);
+  delay(100);
 }
